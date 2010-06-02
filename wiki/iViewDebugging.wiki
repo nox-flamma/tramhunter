@@ -3,6 +3,9 @@
 Some debugging of the web services calls
 
 == GetNextPredictedRoutesCollection ==
+
+Post:
+
 {{{
 POST /pidsservice/pids.asmx HTTP/1.1
 Host: ws.tramtracker.com.au
@@ -14,7 +17,8 @@ Accept-Language: en-us
 Accept-Encoding: gzip, deflate
 Content-Length: 749
 Connection: keep-alive
-
+}}}
+{{{
 <?xml version="1.0" encoding="utf-16"?>
 <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
     <soap12:Header>
@@ -47,7 +51,8 @@ Server: Microsoft-IIS/7.0
 Cache-Control: private, max-age=0
 X-AspNet-Version: 2.0.50727
 X-Powered-By: ASP.NET
-
+}}}
+{{{
 <?xml version="1.0" encoding="utf-16"?>
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <soap:Body>
