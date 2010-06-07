@@ -17,7 +17,7 @@
 			android:gravity="center_vertical"
 			android:layout_marginLeft="8dip">
 			
-			<TextView android:id="@+id/routeNumber"
+			<TextView android:id="@+id/textLine1"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
@@ -32,7 +32,7 @@
 				android:paddingRight="8dip"
 				android:text="Route Number"/>
 				
-			<TextView android:id="@+id/routeDestination"
+			<TextView android:id="@+id/textLine2"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
