@@ -11,9 +11,9 @@ import org.ksoap2.transport.HttpTransportSE;
 
 import org.xmlpull.v1.XmlPullParserException;
 
-import com.andybotting.tramhunter.NextTram;
-import com.andybotting.tramhunter.Stop;
 import com.andybotting.tramhunter.dao.TramHunterDB;
+import com.andybotting.tramhunter.objects.NextTram;
+import com.andybotting.tramhunter.objects.Stop;
 
 import android.content.Context;
 import android.util.Log;

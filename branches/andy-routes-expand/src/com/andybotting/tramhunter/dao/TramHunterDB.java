@@ -4,10 +4,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.List;
 import java.util.Vector;
 
-import com.andybotting.tramhunter.Route;
-import com.andybotting.tramhunter.Stop;
+import com.andybotting.tramhunter.objects.Route;
+import com.andybotting.tramhunter.objects.RouteGroup;
+import com.andybotting.tramhunter.objects.Stop;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -186,8 +188,97 @@ public class TramHunterDB extends SQLiteOpenHelper {
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// Do nothing here
 	}
+	
+	
+	// Get a Vector of RouteGroup objects, with routes as children
+	public List<RouteGroup> getRouteGroups() {
+		db = getDatabase();
+		List<RouteGroup> routeGroups = new Vector<RouteGroup>();
+		
+		Cursor c = db.query(TABLE_ROUTES, 
+				new String[] { "number" }, 
+				null, 
+				null, 
+				RoutesColumns.NUMBER, 
+				null, 
+				RoutesColumns.ID);
 
+		
+		// Get route numbers
+		if (c.moveToFirst()) {		
+			do {
+				RouteGroup rg = new RouteGroup();
+			
+				int col_number = c.getColumnIndexOrThrow(RoutesColumns.NUMBER);
+				rg.setNumber(c.getString(col_number));
+				
+				routeGroups.add(rg);
+			} 
+			while(c.moveToNext());
+		}
+		
+		// For each route number
+		for(RouteGroup rg : routeGroups) {
+			Vector<Route> routes;
+			
+			// Get routes for this number
+			routes = getRoutesForNumber(rg.number);
+			
+			// Add routes to the route group
+			for(Route r : routes) {
+				if (r.getUp()) {
+					rg.setRouteUp(r);
+				}
+				else {
+					rg.setRouteDown(r);
+				}
+				
+			}
+		}
+		
+		return routeGroups;	
+	}
+	
+	
+	
+	// Get the route objects for a route number
+	public Vector<Route> getRoutesForNumber(String routeNumber) {
+		db = getDatabase();
+		
+		Vector<Route> routes = new Vector<Route>();
 
+		Cursor c = db.query(TABLE_ROUTES, 
+				new String[] { "_id", "number", "destination", "direction"}, 
+				RoutesColumns.NUMBER + " = '"  + routeNumber + "'", 
+				null, 
+				null, 
+				null, 
+				null);
+		
+		if (c.moveToFirst()) {		
+			do {	
+				Route route = new Route();
+
+				int col_number = c.getColumnIndexOrThrow(RoutesColumns.NUMBER);
+				int col_destination = c.getColumnIndexOrThrow(RoutesColumns.DESTINATION);
+				int col_direction = c.getColumnIndexOrThrow(RoutesColumns.DIRECTION);
+
+				route.setNumber(c.getString(col_number));
+				route.setDestination(c.getString(col_destination));
+				route.setUp(c.getInt(col_direction));
+			
+				routes.add(route);
+			} 
+			while(c.moveToNext());
+		}
+		
+		c.close();
+		db.close();
+		
+		return routes;
+
+	}
+	
 
 	// Get a Vector list of our routes
 	public Vector<Route> getRoutes() {
@@ -232,7 +323,7 @@ public class TramHunterDB extends SQLiteOpenHelper {
 
 		Cursor c = db.query(TABLE_ROUTES, 
 				new String[] { "_id", "number", "destination", "direction"}, 
-				null, 
+				RoutesColumns.ID + " = '"  + routeId + "'", 
 				null, 
 				null, 
 				null, 
@@ -256,9 +347,7 @@ public class TramHunterDB extends SQLiteOpenHelper {
 		return route;
 	}
 	
-	
-	
-	
+
 	// Get a Vector list of our routes
 	public Vector<Route> getRoutesForStop(int tramTrackerId) {
 		db = getDatabase();
@@ -296,11 +385,7 @@ public class TramHunterDB extends SQLiteOpenHelper {
 		return routes;
 	}	
 	
-	
-	
-	
-	
-	
+
 	// Get a Vector list of our 'starred' stops
 	public Vector<Stop> getAllStops() {
 		db = getDatabase();
@@ -351,13 +436,6 @@ public class TramHunterDB extends SQLiteOpenHelper {
 		db.close();
 		return stops;
 	}	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	// Get a Vector list of our 'starred' stops
