@@ -3,15 +3,14 @@
 = Stories =
 
 		
-||* Story ID*||*Story Description*||	
-		
-1 When I'm viewing a stop, I want to be able to favourite it Complete
-2 I want to be able to browse for stops via tram lines	Complete
-3 I want to find a stop via entering a tram tracker ID	Complete
-4	I want to be able to find Nearby Stops	Complete
-5	I want to be able to see a map showing the nears stops	
-6	When I go to the home page I want a friendly welcome message so that the app is more friendly	In Progress
-7	I want to the app comentate the trams so I can be getting updates without looking at the screen	
-8	I want to be able to search for the closest stop for a certain tram line number	
-9	I want to remember the last tram tracker IDs entered and clear it on request	
-10	I want to be able to add preferences	In progress
+||* Story ID*||*Story Description*||Status||
+||1||When I'm viewing a stop, I want to be able to favourite it||Complete||
+||2||I want to be able to browse for stops via tram lines||Complete||
+||3||I want to find a stop via entering a tram tracker ID||Complete||
+||4||I want to be able to find Nearby Stops||Complete||
+||5||I want to be able to see a map showing the nears stops||||	
+||6||When I go to the home page I want a friendly welcome message so that the app is more friendly||In Progress||||
+||7||I want to the app comentate the trams so I can be getting updates without looking at the screen||||
+||8||I want to be able to search for the closest stop for a certain tram line number||||	
+||9||I want to remember the last tram tracker IDs entered and clear it on request||||
+||10||I want to be able to add preferences||In progress||
