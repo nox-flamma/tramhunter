@@ -3,7 +3,7 @@
 = Stories =
 
 		
-||* Story ID*||*Story Description*||Status||
+||Story ID||Story Description||Status||
 ||1||When I'm viewing a stop, I want to be able to favourite it||Complete||
 ||2||I want to be able to browse for stops via tram lines||Complete||
 ||3||I want to find a stop via entering a tram tracker ID||Complete||
