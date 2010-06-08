@@ -13,3 +13,8 @@
 ||08||I want to hear commentary of the trams so I can be getting updates without looking at the screen||To Be Reviewed||
 ||09||I want to be able to search for the closest stop for a certain tram line number||To Be Reviewed||	
 ||10||I want to remember the last tram tracker IDs entered and clear it on request||To Be Reviewed||
+
+
+= Tech Debt =
+||01||Lose Vectors||To Be Reviewed||
+||02||Mavenise the project to make the build more "proper"||To Be Reviewed||
