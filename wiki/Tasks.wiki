@@ -12,7 +12,7 @@
 
 = Tech Debt Tasks =
 ||T01||Lose the KSOAP and manually parse||Ready For Dev||Luke||
-||T02||Lose Vectors||Ready for Dev||Matt||
+||T02||Lose Vectors||Ready for Dev||Matt||||
 ||T03||Mavenise the project to make the build more "proper"||To Be Reviewed||
 
 == Complete Tasks == 
