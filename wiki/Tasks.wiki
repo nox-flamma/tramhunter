@@ -1,0 +1,22 @@
+#summary Stories for this project
+
+= Story Tasks =
+		
+||Story ID||Story Description||Status||Owner||
+||S05||I want to be able to see a map showing the nears stops||To Be Reviewed||||	
+||S06||When I go to the home page I want a friendly welcome message so that the app is more friendly||In Progress||Luke||
+||S07||I want to be able to add preferences||In Progress||James And Matt||
+||S08||I want to hear commentary of the trams so I can be getting updates without looking at the screen||To Be Reviewed||||
+||S09||I want to be able to search for the closest stop for a certain tram line number||To Be Reviewed||||	
+||S10||I want to remember the last tram tracker IDs entered and clear it on request||To Be Reviewed||||
+
+= Tech Debt Tasks =
+||T01||Lose the KSOAP and manually parse||Ready For Dev||Luke||
+||T02||Lose Vectors||Ready for Dev||Matt||
+||T03||Mavenise the project to make the build more "proper"||To Be Reviewed||
+
+== Complete Tasks == 
+||S01||When I'm viewing a stop, I want to be able to favourite it||Complete||Andy||
+||S02||I want to be able to browse for stops via tram lines||Complete||Andy||
+||S03||I want to find a stop via entering a tram tracker ID||Complete||Andy||
+||S04||I want to be able to find Nearby Stops||Complete||Andy||
