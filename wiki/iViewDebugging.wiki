@@ -193,3 +193,68 @@ X-Powered-By: ASP.NET
     </soap:Body>
 </soap:Envelope>
 }}}
+
+
+
+== Special Event ==
+{{{
+<?xml  version="1.0" encoding="utf-16"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <GetNextPredictedRoutesCollectionResponse xmlns="http://www.yarratrams.com.au/pidsservice/">
+            <GetNextPredictedRoutesCollectionResult>
+                <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+                    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="ToReturn" msdata:UseCurrentLocale="true">
+                        <xs:complexType>
+                            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                                <xs:element name="ToReturn">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="TripID" type="xs:int" minOccurs="0" />
+                                            <xs:element name="InternalRouteNo" type="xs:short" minOccurs="0" />
+                                            <xs:element name="RouteNo" type="xs:string" minOccurs="0" />
+                                            <xs:element name="HeadboardRouteNo" type="xs:string" minOccurs="0" />
+                                            <xs:element name="VehicleNo" type="xs:short" minOccurs="0" />
+                                            <xs:element name="Destination" type="xs:string" default="" minOccurs="0" />
+                                            <xs:element name="HasDisruption" type="xs:boolean" default="false" minOccurs="0" />
+                                            <xs:element name="IsTTAvailable" type="xs:boolean" minOccurs="0" />
+                                            <xs:element name="IsLowFloorTram" type="xs:boolean" default="false" minOccurs="0" />
+                                            <xs:element name="AirConditioned" type="xs:boolean" default="false" minOccurs="0" />
+                                            <xs:element name="DisplayAC" type="xs:boolean" default="false" minOccurs="0" />
+                                            <xs:element name="HasSpecialEvent" type="xs:boolean" default="false" minOccurs="0" />
+                                            <xs:element name="SpecialEventMessage" type="xs:string" minOccurs="0" />
+                                            <xs:element name="PredictedArrivalDateTime" type="xs:dateTime" default="9999-12-31T23:59:59.9999999+11:00" minOccurs="0" />
+                                            <xs:element name="RequestDateTime" type="xs:dateTime" minOccurs="0" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:choice>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:schema>
+                <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+                    <DocumentElement xmlns="">
+                        <ToReturn diffgr:id="ToReturn1" msdata:rowOrder="0">
+                            <InternalRouteNo>0</InternalRouteNo>
+                            <RouteNo>0</RouteNo>
+                            <HeadboardRouteNo>0</HeadboardRouteNo>
+                            <VehicleNo>-1</VehicleNo>
+                            <Destination />
+                            <HasDisruption>false</HasDisruption>
+                            <IsTTAvailable>false</IsTTAvailable>
+                            <IsLowFloorTram>false</IsLowFloorTram>
+                            <AirConditioned>false</AirConditioned>
+                            <DisplayAC>false</DisplayAC>
+                            <HasSpecialEvent>false</HasSpecialEvent>
+                            <SpecialEventMessage>tramTRACKER unavailable due to bus replacement on Routes 3a, 5, 16, 64 &amp; 67 until last tram Monday.</SpecialEventMessage>
+                            <PredictedArrivalDateTime>9999-12-31T23:59:59.9999999+11:00</PredictedArrivalDateTime>
+                            <RequestDateTime>2010-06-12T05:39:30.6255981+10:00</RequestDateTime>
+                        </ToReturn>
+                    </DocumentElement>
+                </diffgr:diffgram>
+            </GetNextPredictedRoutesCollectionResult>
+            <validationResult />
+        </GetNextPredictedRoutesCollectionResponse>
+    </soap:Body>
+</soap:Envelope> 
+}}}
