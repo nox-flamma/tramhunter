@@ -2,7 +2,7 @@
 
 = Story Tasks =
 		
-||Story ID||Story Description||Status||Owner||
+||ID||Description||Status||Owner||
 ||S05||I want to be able to see a map showing the nears stops||To Be Reviewed||||	
 ||S06||When I go to the home page I want a friendly welcome message so that the app is more friendly||In Progress||Luke||
 ||S07||I want to be able to add preferences||In Progress||James And Matt||
@@ -18,15 +18,23 @@
 ||S17||I want to see changes to the route during special event||Ready For Development||||
 ||S18||I want to know the type tram model which is listed||Ready For Development||||
 ||S19||I want to know the version of the application||Ready For Development||||
+||S20||I want to receive RSS news feeds on tram information||To Be Reviewed||||
+||S21||I want an option to be able to choose the color scheme for the application (e.g. white or black)||To Be Reviewed||||
 
+= Defects =
+||ID||Description||Status||Owner||
+||D01||GPS connection is not closed on nearest stop activity when phone screen is locked (Battery monster)||Open||Luke||
+||D02||On the stop details activity the minutes to depart field returned by the web service is sometimes actually a time (when over more than an hour?!) and this does not display correctly||Open||||
 
 = Technical Debt Tasks =
+||ID||Description||Status||Owner||
 ||T01||Lose the KSOAP and manually parse||Ready For Development||Luke||
 ||T02||Lose Vectors||Ready for Dev||Matt||
 ||T03||Mavenise the project to make the build more "proper"||To Be Reviewed||Matt||
 
 
 == Complete Tasks == 
+||ID||Description||Status||Owner||
 ||S01||When I'm viewing a stop, I want to be able to favourite it||Complete||Andy||
 ||S02||I want to be able to browse for stops via tram lines||Complete||Andy||
 ||S03||I want to find a stop via entering a tram tracker ID||Complete||Andy||
