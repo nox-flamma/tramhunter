@@ -258,3 +258,98 @@ X-Powered-By: ASP.NET
     </soap:Body>
 </soap:Envelope> 
 }}}
+
+{{{
+POST /pidsservice/pids.asmx HTTP/1.1
+
+Host: ws.tramtracker.com.au
+
+Accept: */*
+
+User-Agent: TramHunter
+
+SOAPAction: http://www.yarratrams.com.au/pidsservice/GetStopInformation
+
+Content-Type: text/xml
+
+Connection: close
+
+Content-Length: 667
+
+<?xml  version="1.0" encoding="utf-16"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <PidsClientHeader xmlns="http://www.yarratrams.com.au/pidsservice/">
+            <ClientGuid>00000000-0000-0000-0000-000000000001</ClientGuid>
+            <ClientType>DASHBOARDWIDGET</ClientType>
+            <ClientVersion>1.0.0</ClientVersion>
+            <ClientWebServiceVersion>6.1.0.0</ClientWebServiceVersion>
+        </PidsClientHeader>
+    </soap:Header>
+    <soap:Body>
+        <GetStopInformation xmlns="http://www.yarratrams.com.au/pidsservice/">
+            <stopNo>1110</stopNo>
+        </GetStopInformation>
+    </soap:Body>
+</soap:Envelope> 
+}}}
+
+
+{{{
+ <?xml  version="1.0" encoding="utf-16"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <GetStopInformationResponse xmlns="http://www.yarratrams.com.au/pidsservice/">
+            <GetStopInformationResult>
+                <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+                    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="StopInformation" msdata:UseCurrentLocale="true">
+                        <xs:complexType>
+                            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                                <xs:element name="StopInformation">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="FlagStopNo" type="xs:string" minOccurs="0" />
+                                            <xs:element name="StopName" type="xs:string" minOccurs="0" />
+                                            <xs:element name="CityDirection" type="xs:string" minOccurs="0" />
+                                            <xs:element name="Latitude" type="xs:double" minOccurs="0" />
+                                            <xs:element name="Longitude" type="xs:double" minOccurs="0" />
+                                            <xs:element name="SuburbName" type="xs:string" minOccurs="0" />
+                                            <xs:element name="IsCityStop" type="xs:boolean" minOccurs="0" />
+                                            <xs:element name="HasConnectingBuses" type="xs:boolean" minOccurs="0" />
+                                            <xs:element name="HasConnectingTrains" type="xs:boolean" minOccurs="0" />
+                                            <xs:element name="HasConnectingTrams" type="xs:boolean" minOccurs="0" />
+                                            <xs:element name="StopLength" type="xs:short" minOccurs="0" />
+                                            <xs:element name="IsPlatformStop" type="xs:boolean" minOccurs="0" />
+                                            <xs:element name="Zones" type="xs:string" minOccurs="0" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:choice>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:schema>
+                <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+                    <DocumentElement xmlns="">
+                        <StopInformation diffgr:id="StopInformation1" msdata:rowOrder="0">
+                            <FlagStopNo>40</FlagStopNo>
+                            <StopName>Wattletree Rd &amp; Dandenong Rd</StopName>
+                            <CityDirection>towards City</CityDirection>
+                            <Latitude>-37.8608487238043</Latitude>
+                            <Longitude>145.014850456452</Longitude>
+                            <SuburbName>Armadale</SuburbName>
+                            <IsCityStop>false</IsCityStop>
+                            <HasConnectingBuses>false</HasConnectingBuses>
+                            <HasConnectingTrains>false</HasConnectingTrains>
+                            <HasConnectingTrams>true</HasConnectingTrams>
+                            <StopLength>24</StopLength>
+                            <IsPlatformStop>true</IsPlatformStop>
+                            <Zones>1</Zones>
+                        </StopInformation>
+                    </DocumentElement>
+                </diffgr:diffgram>
+            </GetStopInformationResult>
+            <validationResult />
+        </GetStopInformationResponse>
+    </soap:Body>
+</soap:Envelope> 
+}}}
