@@ -1,0 +1,21 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/departures_row"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	style="@style/ListItem"
+	android:paddingLeft="36dip" >
+
+	<TextView android:id="@+id/route_name"
+		android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentLeft="true"
+		style="@style/ListTitle" />		
+		
+	<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/route_dest"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/route_name"
+		style="@style/ListSubtitle" />
+		
+</RelativeLayout>
